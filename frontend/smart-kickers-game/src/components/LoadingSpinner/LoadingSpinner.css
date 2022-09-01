@@ -1,0 +1,18 @@
+.loading-spinner {
+  border: 10px var(--SAP-light-gray);
+  border-top: 10px var(--SAP-dark-gray);
+  width: 2em;
+  height: 2em;
+  animation: spinner 1.3s linear infinite;
+  border-radius: 50%;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

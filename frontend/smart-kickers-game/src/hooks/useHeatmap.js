@@ -15,10 +15,7 @@ const useHeatmap = () => {
     const array = new Array(heatmapDim).fill(0).map(() => '');
     let numbersCopy = JSON.parse(JSON.stringify(data.Heatmap));
 
-    for (let i = 0; i < heatmapDim; i++)
-      for (let j = 0; j <= i; j++) {
-        numbersCopy[j][i] = numbersCopy[i][j];
-      }
+    //numbersCopy.forEach((arr) => arr.reverse());
 
     return { array, numbersCopy };
   }
