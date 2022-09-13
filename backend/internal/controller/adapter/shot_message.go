@@ -53,11 +53,17 @@ func UnpackShotMsg(message io.Reader) (shot model.Shot, err error) {
 	}
 
 	shot = model.Shot{
-		Speed: params.Speed,
-		Team:  teamID,
+		Speed:      params.Speed,
+		Team:       teamID,
+		ShotAtGoal: checkIfShotAtGoal(params.EndArea, teamID),
 	}
 
 	return shot, nil
+}
+
+func checkIfShotAtGoal(areaID int, teamID int) bool {
+	return config.TeamBlue == teamID && areaID == config.WhiteTeamGoalArea ||
+		config.TeamWhite == teamID && areaID == config.BlueTeamGoalArea
 }
 
 func decodeTeam(areaID int) (int, error) {
