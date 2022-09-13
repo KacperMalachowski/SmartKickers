@@ -39,4 +39,4 @@ jobs:
         with:
           version: v1.48
           skip-cache: true
-          only-new-issues: true
+          working-directory: backend
